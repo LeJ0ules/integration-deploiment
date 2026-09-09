@@ -18,7 +18,7 @@ jobs:
         with:
           name: upload-my-result
           path: result.txt
-      - run: python python_job.py
+      - run: python job.py
         env:
           super_secret: ${{ secrets.SECRET_API_KEY }}
       - run: python -m unittest discover -s . -v
