@@ -12,10 +12,11 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v6
       - run: python job.py
+      - name: Run unit tests
+        run: python -m unittest test_addition.py
       - run: echo "coucou" > result.txt
       - name: Upload result.txt as an artifact
         uses: actions/upload-artifact@v4
         with:
           name: upload-my-result
           path: result.txt
-      
